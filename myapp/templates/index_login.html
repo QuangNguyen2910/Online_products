@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    {% load static %} <!-- Load static template tag for using static files -->
+    <link rel="stylesheet" href="{% static 'styles_register.css' %}">
+</head>
+
+<body>
+    <header>
+        <nav class="menu">
+            <!-- Your navigation menu here -->
+        </nav>
+        <h1>Login Page</h1>
+    </header>
+    <main>
+        <section class="main-section">
+            <form method="POST" action="login" id="login-form">
+                {% csrf_token %}
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" required>
+
+                <button type="submit">Login</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <!-- Your footer content here -->
+    </footer>
+    {% comment %} <script src="{% static 'script_register.js' %}"></script> {% endcomment %}
+</body>
+
+</html>

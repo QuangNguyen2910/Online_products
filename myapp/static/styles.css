@@ -1,0 +1,98 @@
+/* Your styles go here */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+.menu {
+    background-color: #444;
+    padding: 10px;
+}
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.menu ul li a:hover {
+    color: #ccc;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1; /* Allow the main section to grow and fill the remaining space */
+}
+
+.main-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+.courses {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.course {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    margin: 10px;
+    min-width: 250px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+button a:link, button a:visited, button a:hover, button a:active {
+    color: white;
+    text-decoration: none;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    flex-shrink: 0; /* Prevent the footer from shrinking */
+}

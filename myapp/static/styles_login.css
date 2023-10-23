@@ -1,0 +1,96 @@
+/* Your styles go here */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+.menu {
+    background-color: #444;
+    padding: 10px;
+}
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.menu ul li a:hover {
+    color: #ccc;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 200px); /* Adjust the height to leave space for the header and footer */
+}
+
+.main-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input {
+    padding: 8px;
+    margin-top: 5px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}

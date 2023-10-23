@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Course Store</title>
+    {% load static %} <!-- Load static template tag for using static files -->
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+
+<body>
+    <header>
+        <nav class="menu">
+            <ul>
+                <li><a href="#" onclick="showSection('greeting')">Home</a></li>
+                <li><a href="#" onclick="showSection('courses')">Courses</a></li>
+                <li><a href="#" onclick="showSection('about')">About</a></li>
+                <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+            </ul>
+        </nav>
+        <h1>Online Course Store</h1>
+    </header>
+    <main>
+        <section id="greeting" class="main-section">
+            {% if user.is_authenticated == False %}
+            <h2>Welcome to our Online Course Store!</h2>
+            <p>We provide high-quality online courses to help you achieve your goals.</p>
+            <p> But please register or login first.</p>
+            <button><a href="{% url 'register' %}">Register</a></button>
+            <button><a href="{% url 'login' %}">Login</a></button>
+            {% else %}
+            <h2>Welcome to our Online Course Store, {{user.username}}!</h2>
+            <p>We provide high-quality online courses to help you achieve your goals.</p>
+            <p> You can now purchase courses.</p>
+            <button><a href="{% url 'logout' %}">Logout</a></button>
+            {% endif %}
+        </section>
+        <section id="courses" class="main-section" style="display: none;">
+            <h2>Featured Courses</h2>
+            <div class="courses">
+                {% for feature in features%}
+                <div class="course">
+                    <h3>{{feature.name}}</h3>
+                    <b><p>{{feature.details}}</p></b>
+                    {% if feature.available == True %}
+                    <p>The course is now available</p>
+                    {% else %}
+                    <p>The course is now unavailable</p>
+                    {% endif %}
+                    <button onclick="purchaseCourse('Course')">Purchase</button>
+                </div>
+                <!-- Add more courses here -->
+                {% endfor %}
+            </div>
+        </section>
+        <section id="about" class="main-section" style="display: none;">
+            <h2>About Us</h2>
+            <p>Welcome to our Online Course Store! We are committed to providing the best online courses to help you learn and grow.</p>
+        </section>
+        <section id="contact" class="main-section" style="display: none;">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or need assistance, feel free to contact us at contact@example.com.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Online Course Store. All rights reserved.</p>
+    </footer>
+    <script src="{% static 'script.js' %}"></script>
+</body>
+
+</html>
